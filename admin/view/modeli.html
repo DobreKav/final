@@ -1,0 +1,91 @@
+
+<div class="container-fluid p-2 bg-warning text-white text-center">
+  <h1>All Models </h1>
+  <p>PLEASE CHOOSE YOUR MODEL!</p> 
+</div>
+  
+<div class="container mt-5 ">
+  <div class="row">
+    <div class="col-sm-12 ">
+      <h3 class="text-center">Modeli</h3>
+      <table class="table table-light ">
+		<thead>
+			<tr>
+				<th>
+					<input class="form control" 
+					type="text" 
+					placeholder="Search by marka" 
+					name="serachByCountry"
+					ng-model="searchByMarka">
+				</th>
+				<th title="Logo"></th>
+				<th>
+					<input class="form control" 
+					type="text" 
+					placeholder="Search by model" 
+					name="serachByCountry"
+					ng-model="searchByModel">
+				</th>
+				<th title="Car"></th>
+				<th>
+					<input class="form control" 
+					type="text" 
+					placeholder="Search by color" 
+					name="serachByCountry"
+					ng-model="searchByColor">
+				</th>
+				<th>
+					<input class="form control" 
+					type="text" 
+					placeholder="Search by fuel" 
+					name="serachByCountry"
+					ng-model="searchByFuel">
+				</th>
+				<th>
+					<input class="form control" 
+					type="text" 
+					placeholder="Search by price &#8364;" 
+					name="serachByCountry"
+					ng-model="searchByPrice"></th>
+				
+				
+				<th>
+					<input class="form control" 
+					type="text" 
+					placeholder="Search by country" 
+					name="serachByCountry"
+					ng-model="searchByCountry">
+				</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="model in modeli | 
+				filter :{
+					marka_name:searchByMarka,
+					model:searchByModel, 
+					color:searchByColor,
+					country:searchByCountry,
+					fuel:searchByFuel,
+					price:searchByPrice,
+					country:searchByCountry}">
+
+
+				<td>{{model.marka_name}} </td>
+				<td><img class=" " src="../uploads/brands/{{model.img_path}}" alt="" width="50" height="50"></td>
+				
+				<td>{{model.model_name}}</td>
+				<td title="brand: {{model.marka_name}} model: {{model.model_name}}"><img class=" " src="../uploads/modeli/{{model.img_model}}" alt="" width="50" height="50"> </td>
+				<td>{{model.color}}</td>
+				<td>{{model.fuel}}</td>
+				<td>{{model.price}}</td>
+				
+				<td>{{model.country}}</td>
+				<td><button type="button" class="bg-danger" ng-click="deleteRow('modeli',model.model_id)"><i class="fa fa-trash" style="font-size:24px;color:rgb(255, 255, 255)"></i></button></td>
+				
+			</tr>
+		</tbody>
+	  </table></p>
+    </div>
+  </div>
+</div>

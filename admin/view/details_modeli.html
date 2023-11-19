@@ -1,0 +1,37 @@
+<form name="myForm ">
+    <div class="mb-3 mt-3">
+      <label for="model_name" class="form-label ">Model name:</label>
+      <input type="text" class="form-control" placeholder="Enter model name" id="model_name" name="model_name" ng-model="model_name">
+    </div>
+    <div class="mb-3">
+      <label for="color" class="form-label">Color:</label>
+      <input type="text" class="form-control" placeholder="Enter color"  id="color" name="color" ng-model="color">
+    </div>
+    <div class="mb-3">
+      <label for="fuel" class="form-label">fuel:</label>
+      <select class="form-control"  id="fuel" name="fuel" ng-model="fuel">
+          <option value="benzin">Benzin</option>
+          <option value="disel">Dizel</option>
+          <option value="hibrid">Hibrid</option>
+      </select>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" class="form-control" placeholder="Enter price"  id="price" name="price" ng-model="price">
+      </div>
+      <div class="mb-3">
+        <label for="marki_id" class="form-label">Marka:</label>
+        
+        <select class="form-control" name="marki_id" id="marki_id" ng-model="marki_id">
+          <option ng-repeat="marka in marki" value="{{marka.marki_id}}">
+            {{marka.marka_name}} ({{marka.country}})
+          </option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="img_model" class="form-label">Image:</label>
+        <input type="text" class="form-control" placeholder="Enter img_model"  id="img_model" name="img_model" ng-model="img_model">
+      </div>
+    <button type="button" class="btn btn-success" ng-click="details_modeli(model_name,color,fuel,price,marki_id, img_model)">SAVE</button>
+  </form>

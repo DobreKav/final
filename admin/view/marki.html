@@ -1,0 +1,126 @@
+
+<div class="container-fluid p-2 bg-warning text-white text-center">
+  <h1>All Cars </h1>
+  <p>Please choose your car model !</p> 
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Marki</h3>
+      <p>
+	  <table class="table table-striped">
+		<thead>
+			<tr>
+				<th>
+					<input class="form control" 
+					type="text" 
+					placeholder="Search by marka" 
+					name="serachByCountry"
+					ng-model="searchByMarkaName" >
+				</th>
+				<th><input class="form control" 
+					type="text" 
+					placeholder="Search by country" 
+					name="serachByCountry"
+					ng-model="searchByCountry" ></th>
+				<th>
+          <select class="form-control" 
+            id="searchBySalon" name="searchBySalon" 
+            ng-model="searchBySalon">
+            <option ng-repeat="cites in city" value="{{cites.city}}">{{cites.city}}</option>
+          </select>
+        </th>
+				<th title="Logo"></th>
+				<th>View</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="marka in marki | filter :{country:searchByCountry, marka_name:searchByMarkaName, city:searchBySalon}">
+				<td>{{marka.marka_name}}</td>
+				<td>{{marka.country}}</td>
+				<td>{{marka.city}} <br> ul. {{marka.address}}</td>
+				<td><img src="../uploads/brands/{{marka.img_path}}" alt="" width="100" height="90"></td>
+				<td><button type="button" class="bg-danger" ng-click="deleteRow('modeli',{{modeli.model_id}})" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-trash" style="font-size:24px;color:white"></i></button></td>
+                    Read more
+				<td><button type="button" class="bg-danger" ng-click="getIndex($index)" data-bs-target="#myModal" data-bs-toggle="modal" ><i class="fa fa-eye" style="font-size:24px;color:white" ></i></button></td>
+				<td><button type="button" class="bg-danger" ng-click="deleteRow('marki',marka.marki_id)"><i class="fa fa-trash" style="font-size:24px;color:white"></i></button></td>
+			</tr>
+		</tbody>
+	  </table>
+	  </p>
+    </div>
+  </div>
+</div>
+
+	<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Brands {{marki[getPosition].marka_name}}</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="containr-fluid">
+                <div class="row">
+                    <div class="col-sm-3 bg-danger text-center">
+                        <h3>Brend </h3>
+                        <p>{{marki[getPosition].marka_name}}</p>
+                        <p><img src="../uploads/brands/{{marki[getPosition].img_path}}" alt="" width="100" height="80"></p>
+                    </div>
+                    <div class="col-sm-9 bg-dark">
+                        <h3>Cars</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>                                    
+                                    <th><input class="form control" 
+                                        type="text" 
+                                        placeholder="Search by country" 
+                                        name="serachByCountry"
+                                        ng-model="searchByCountry" ></th>
+                                    <th><select class="form-control" 
+                                      id="searchBySalon" name="searchBySalon" 
+                                      ng-model="searchBySalon">
+                                      <option ng-repeat="cites in city" value="{{cites.city}}">{{cites.city}}</option>
+                                    </select>
+                                      
+                                    </th>
+
+
+
+                                    <th title="Logo"> </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="marka in marki | filter :{country:searchByCountry, marka_name:searchByMarkaName, city:searchBySalon, marki_id:marki[getPosition].marki_id}">
+                                   
+                                    <td>{{marka.country}}</td>
+                                    <td>{{marka.city}} <br> ul.{{marka.address}}</td>
+                                    <td><img src="uploads/brands/{{marka.img_path}}" alt="" width="50" height="80"></td>
+                                    <!-- <td><button type="button" class="bg-danger" ng-click="deleteRow('modeli',{{modeli.model_id}})" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa fa-trash" style="font-size:24px;color:white"></i></button></td> -->
+                                    
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+

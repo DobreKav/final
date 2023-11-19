@@ -1,0 +1,16 @@
+<form name="myForm">
+    <div class="mb-3 mt-3">
+      <label for="city" class="form-label">City name:</label>
+      <input type="text" class="form-control" placeholder="Enter City name" id="city" name="city" ng-model="city">
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address:</label>
+      <input type="text" class="form-control" placeholder="Enter address"  id="address" name="address" ng-model="address">
+    </div>
+    <div class="mb-3">
+      <label for="tel" class="form-label">Tel:</label>
+      <input type="number" class="form-control" placeholder="Enter tel"  id="tel" name="tel" ng-model="tel">
+    </div>
+    </div>
+      <button type="button" class="btn btn-success" ng-click="details_salon(city,address,tel)">SAVE</button>
+</form>

@@ -1,0 +1,30 @@
+<div class="container-fluid p-5 bg-primary text-white text-center">
+    <h1>All Automotive Seles Places</h1>
+    <p>Resize this responsive page to see the effect!</p> 
+  </div>
+    
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Saloni</h3>
+        <p><table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>City</th>
+                  <th>Address</th>
+                  <th>Tel</th>
+                  <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="saloni in salon">
+                  <td>{{saloni.city}}</td>
+                  <td>{{saloni.address}}</td>
+                  <td>{{saloni.tel}}</td>
+                  <td><button type="button" class="bg-danger" ng-click="deleteRow('saloni',saloni.salon_id)"><i class="fa fa-trash" style="font-size:24px;color:white"></i></button></td>
+              </tr>
+          </tbody>
+        </table></p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dukani>
+	<dukan>
+		<dukani_id>1</dukani_id>
+		<ime>A1</ime>
+		<adresa>bu.1 vi</adresa>
+	</dukan>
+	<dukan>
+		<dukani_id>2</dukani_id>
+		<ime>A1</ime>
+		<adresa>Part 2/3</adresa>
+	</dukan>
+</dukani>

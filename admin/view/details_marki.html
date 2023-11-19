@@ -1,0 +1,21 @@
+<form name="myForm">
+  <div class="mb-3 mt-3">
+    <label for="marka_name" class="form-label">Marka name:</label>
+    <input type="text" class="form-control" placeholder="Enter marki name" id="marka_name" name="marka_name" ng-model="marka_name">
+  </div>
+  <div class="mb-3">
+    <label for="country" class="form-label">Country:</label>
+    <input type="text" class="form-control" placeholder="Enter country"  id="country" name="country" ng-model="country">
+  </div>
+  <div class="mb-3">
+    <label for="salon_id" class="form-label">Salon_id:</label>
+    <input type="number" class="form-control" placeholder="Enter salon_id"  id="salon_id" name="salon_id" ng-model="salon_id">
+  </div>
+
+  <div class="mb-3">
+    <label for="img_path" class="form-label">Image:</label>
+    <input type="text" class="form-control" placeholder="Enter img_path"  id="img_path" name="img_path" ng-model="img_path">
+  </div>
+  
+  <button type="button" class="btn btn-success" ng-click="details_marki(marka_name,country,salon_id, img_path)">SAVE</button>
+</form>
